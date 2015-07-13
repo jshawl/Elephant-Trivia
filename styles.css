@@ -37,22 +37,14 @@ img[src] {
  align: center;
 }
 
-td {
+.question {
   display: none;
   padding: .5em;
-  border: 1em solid #F04A5A;
+  border: 2em solid #F04A5A;
+  font-size: 26px;
 }
 
-.question {
-  font-size: 24px;
-}
-
-.correctAnswer {
-  padding: .5em
-  background-color: #F04A5A;
-}
-
-.answer {
-
-
+ul {
+  border: .1em solid #000;
+  font-size: 18px;
 }
