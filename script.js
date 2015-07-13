@@ -1,31 +1,52 @@
+var scoreCount;
+var questionNumber;
+var triviaQuestions = $(".question")
+
+function getRandomQuestion() {
+  var random = Math.floor(Math.random() * triviaQuestions.length);
+  console.log(random);
+  triviaQuestions.eq(random).show();
+}
+
 $(document).ready(function() {
   // alert("jquery works!")
 
-var scoreCount;
-var questionNumber;
 
-//start game
-// document.getElementsByTagName("img")[0].addEventListener
-$("img").eq(0).on("click", function(beginGame){
+$("img").eq(0).on("click", function(){
+
     scoreCount = 0;
     questionNumber = 1;
     $(".scoreCard").html("Score: " + scoreCount);
-    $(".info").html("Question " + questionNumber + " out of " +  $(".question").length + ":");
+    $(".info").html("Question " + questionNumber + " out of " +  triviaQuestions.length + ":");
 
-    function getRandomQuestion() {
-      var random = Math.floor(math.random() * 10);
-      console.log(random);
-      $(".question").eq(random).css("display: show");
+    // console.log("about to call func");
+
+    getRandomQuestion();
+
+    for (var i = 0; i <= triviaQuestions.length; i++) {
+
+      if ($(".correctAnswer").on("click", function(){
+        $(".correctAnswer").css("background-color", "#A4CE8A");
+        alert("Correct!");
+        scoreCount++;
+        questionNumber++;
+      }));
+
+      else if ($(".otherAnswer").on("click", function(){
+        $(".otherAnswer").css("background-color", "#F04A5A");
+        $(".correctAnswer").css("background-color", "#A4CE8A");
+        scoreCount += 0;
+        questionNumber++;
+      }));
+
+      else {
+        alert("Please select an answer.");
+      };
+
+      $(".scoreCard").html("Score: " + scoreCount);
+      $(".info").html("Question " + questionNumber + " out of " +  $(".question").length + ":");
+
     }
 
-})
-
-      // for (var i = 0; i <= tr.length; i++) {
-      //     i = random
-
-
-
-
-
-
-}) //closing tag
+}) //ele image closing tag
+}) //documet.ready closing tag
