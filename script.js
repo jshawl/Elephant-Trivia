@@ -1,14 +1,18 @@
 var scoreCount;
 var questionNumber;
-var triviaQuestions = $(".question")
+
+$(document).ready(function() {
+
+var triviaQuestions = $(".question");
 
 function getRandomQuestion() {
   var random = Math.floor(Math.random() * triviaQuestions.length);
   console.log(random);
   triviaQuestions.eq(random).show();
-}
+  $(".otherAnswer").css("background-color", "white");
+  $(".correctAnswer").css("background-color", "white");
 
-$(document).ready(function() {
+}
   // alert("jquery works!")
 
 
@@ -23,30 +27,28 @@ $("img").eq(0).on("click", function(){
 
     getRandomQuestion();
 
-    for (var i = 0; i <= triviaQuestions.length; i++) {
 
-      if ($(".correctAnswer").on("click", function(){
-        $(".correctAnswer").css("background-color", "#A4CE8A");
-        alert("Correct!");
-        scoreCount++;
+      $(".correctAnswer").on("click", function(){
+        $(".correctAnswer").css("background-color", "#02CC6B");
         questionNumber++;
-      }));
+        scoreCount++;
+        $(".scoreCard").html("Score: " + scoreCount);
+        $(".question").css("display", "none");
+        $(".info").html("Question " + questionNumber + " out of " +  $(".question").length + ":");
+        getRandomQuestion();
+      });
 
-      else if ($(".otherAnswer").on("click", function(){
-        $(".otherAnswer").css("background-color", "#F04A5A");
-        $(".correctAnswer").css("background-color", "#A4CE8A");
+      $(".otherAnswer").on("click", function(){
+        $(this).css("background-color", "#F04A5A");
+        $(".correctAnswer").css("background-color", "#02CC6B");
         scoreCount += 0;
         questionNumber++;
-      }));
+        $(".question").css("display", "none");
+        $(".info").html("Question " + questionNumber + " out of " +  $(".question").length + ":");
+        getRandomQuestion();
+      });
 
-      else {
-        alert("Please select an answer.");
-      };
 
-      $(".scoreCard").html("Score: " + scoreCount);
-      $(".info").html("Question " + questionNumber + " out of " +  $(".question").length + ":");
 
-    }
-
-}) //ele image closing tag
 }) //documet.ready closing tag
+})
