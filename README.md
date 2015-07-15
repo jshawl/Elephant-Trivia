@@ -1,11 +1,9 @@
 # trivia
 
-#user stories
+#How to Play:
 
-1.  As a player, I want to be notified if my answer is correct
-2.  As a player, I want the computer to calc my score, so I don't have to
-3.  As a player, I want the computer to display the scoreboard up to the minute, so I can see the status
-4.  As a player, I want to be able to see all questions displayed, so i can answer the ones i know first
-5.  As a player, I want the option to play against the comp or against a friend
-6.  As a player, I want to be congratulated if i won, so I can have bragging rights
-7.  As a player, I want to be able to submit corrections if I see errors
+Click on the elephant image to trigger the first question.  Questions will be displayed one by one.
+
+After you select an answer, it will highlight green or red depending on whether or not it is correct (green is correct, red is wrong).  If you select a wrong answer, the correct answer will also show so that you'll know the info for cocktail parties!
+
+The game will keep score for you and will also tell you how many questions you've answered.  Once you finish the game, you can restart the fun by clicking the elephant image again.
