@@ -29,7 +29,7 @@ var triviaQuestions = $(".question");
       $(".correctAnswer").css("background-color", "#02CC6B");
       questionNumber++;
       scoreCount++;
-      $(".scoreCard").html("Score: " + scoreCount);
+      $(".scoreCard").html("Score: " + scoreCount).css("color", "red");
       $(".next").show();
     });
 
@@ -48,16 +48,15 @@ var triviaQuestions = $(".question");
       getRandomQuestion();
 
       if (($(".question").length) < questionNumber) {
-        $("img").eq(0).show();
+        $("img").eq(0).show().on("click", function(){
+          location.reload()
+        });
         $(".info").html("Congratulations! You answered " + scoreCount + " correctly!");
         $(".enp").show();
       }
+
     })//closing next-click
 
   })//closing ele image
-//
-// $("img").eq(0).on("click", function(){
-//   $(".enp").hide();
-// }
 
 }) //closing tag
