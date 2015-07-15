@@ -55,8 +55,8 @@ var triviaQuestions = $(".question");
         $(".enp").show();
       }
 
-    })//closing next-click
+    })
 
-  })//closing ele image
+  })
 
-}) //closing tag
+})
