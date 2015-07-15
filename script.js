@@ -5,51 +5,59 @@ $(document).ready(function() {
 
 var triviaQuestions = $(".question");
 
-function getRandomQuestion() {
-  var random = Math.floor(Math.random() * triviaQuestions.length);
-  console.log(random);
-  triviaQuestions.eq(random).show();
-  $(".otherAnswer").css("background-color", "white");
-  $(".correctAnswer").css("background-color", "white");
-  triviaQuestions.splice(random, 1);
-}
+  function getRandomQuestion() {
+    var random = Math.floor(Math.random() * triviaQuestions.length);
+    console.log(random);
+    triviaQuestions.eq(random).show();
+    $(".otherAnswer").css("background-color", "white");
+    $(".correctAnswer").css("background-color", "white");
+    triviaQuestions.splice(random, 1);
+  }
 
+  $("img").eq(0).on("click", function(){
 
-$("img").eq(0).on("click", function(){
-
-  scoreCount = 0;
-  questionNumber = 1;
-  $(".scoreCard").html("Score: " + scoreCount);
-  $(".info").html("Question " + questionNumber + " out of " +  triviaQuestions.length + ":");
-
-    // console.log("about to call func");
-
-  getRandomQuestion();
-
-
-  $(".correctAnswer").on("click", function(){
-    $(".correctAnswer").css("background-color", "#02CC6B");
-    questionNumber++;
-    scoreCount++;
+    scoreCount = 0;
+    questionNumber = 1;
     $(".scoreCard").html("Score: " + scoreCount);
-    $(".question").css("display", "none");
-    $(".info").html("Question " + questionNumber + " out of " +  $(".question").length + ":");
-    getRandomQuestion();
-  });
+    $(".info").html("Question " + questionNumber + " out of " +  triviaQuestions.length + ":");
 
-  $(".otherAnswer").on("click", function(){
-    $(this).css("background-color", "#F04A5A");
-    $(".correctAnswer").css("background-color", "#02CC6B");
-    scoreCount += 0;
-    questionNumber++;
-    $(".question").css("display", "none");
-    $(".info").html("Question " + questionNumber + " out of " +  $(".question").length + ":");
     getRandomQuestion();
-  });
-  //
-  // if (questionNumber > triviaQuestions.length) {
-  //   $(".info").html("Game over!");
-  // }
 
-})
-})
+    $("img").eq(0).hide();
+
+    $(".correctAnswer").on("click", function(){
+      $(".correctAnswer").css("background-color", "#02CC6B");
+      questionNumber++;
+      scoreCount++;
+      $(".scoreCard").html("Score: " + scoreCount);
+      $(".next").show();
+    });
+
+    $(".otherAnswer").on("click", function(){
+      $(this).css("background-color", "#F04A5A");
+      $(".correctAnswer").css("background-color", "#02CC6B");
+      questionNumber++;
+      scoreCount += 0;
+      $(".next").show();
+    });
+
+    $(".next").on("click", function(){
+      $(".question").css("display", "none");
+      $(".info").html("Question " + questionNumber + " out of " +  $(".question").length + ":");
+      $(".next").hide();
+      getRandomQuestion();
+
+      if (($(".question").length) < questionNumber) {
+        $("img").eq(0).show();
+        $(".info").html("Congratulations! You answered " + scoreCount + " correctly!");
+        $(".enp").show();
+      }
+    })//closing next-click
+
+  })//closing ele image
+//
+// $("img").eq(0).on("click", function(){
+//   $(".enp").hide();
+// }
+
+}) //closing tag

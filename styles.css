@@ -21,6 +21,14 @@ img[src="eleimage.png"] {
   text-align: center;
 }
 
+.enp {
+  display: none;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 20px 300px;
+  text-align: center;
+}
+
 .scoreCard {
   font-weight: bold;
   font-size: 20px;
@@ -30,6 +38,7 @@ img[src="eleimage.png"] {
 
 table {
   margin: auto 150px;
+  padding-top: 3em;
 }
 
 img[src] {
@@ -42,9 +51,30 @@ img[src] {
   padding: .5em;
   border: 2em solid #F04A5A;
   font-size: 26px;
+  text-align: center;
+}
+/*
+td {
+  margin: auto 5em;
+}*/
+
+li {
+  border: .1em solid #000;
+  margin:.5em;
+  font-size: 18px;
+  list-style-type: none;
+  text-align: center;
 }
 
-ul {
+.next {
+  display: none;
   border: .1em solid #000;
-  font-size: 18px;
+  padding: auto;
+  font-style: bold;
+  font-size: 20px;
+  width: 10em;
+  height: 2em;
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
 }
