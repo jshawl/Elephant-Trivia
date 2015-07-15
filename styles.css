@@ -1,0 +1,76 @@
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+  font-weight: 500;
+  text-align: center;
+}
+
+img[src="eleimage.png"] {
+  display: inline-block;
+  margin 5px;
+  height: 5%;
+  width: 50px;
+}
+
+.info {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 20px 300px;
+  text-align: center;
+}
+
+.enp {
+  display: none;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 20px 300px;
+  text-align: center;
+}
+
+.scoreCard {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 20px 300px;
+  text-align: center;
+}
+
+table {
+  margin: auto 150px;
+  padding-top: 3em;
+}
+
+img[src] {
+ height: 25%;
+ align: center;
+}
+
+.question {
+  display: none;
+  padding: .5em;
+  border: 2em solid #F04A5A;
+  font-size: 26px;
+  text-align: center;
+}
+
+li {
+  border: .1em solid #000;
+  margin:.5em;
+  font-size: 18px;
+  list-style-type: none;
+  text-align: center;
+}
+
+.next {
+  display: none;
+  border: .1em solid #000;
+  padding: auto;
+  font-style: bold;
+  font-size: 20px;
+  width: 10em;
+  height: 2em;
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+}
