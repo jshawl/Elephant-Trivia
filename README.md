@@ -1,4 +1,4 @@
-# trivia
+# Elephant Trivia
 
 #How to Play:
 
