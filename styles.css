@@ -7,10 +7,10 @@ h1 {
   text-align: center;
 }
 
-img[src="eleimage.png"] {
+img[src="eleimage.png"] { /* nice use of an attribute selector! */
   display: inline-block;
   margin 5px;
-  height: 5%;
+  height: 5%; /* avoid hard coding heights in CSS when possible. Doesn't the width of the image determine its height based on aspect ratio? */
   width: 50px;
 }
 
@@ -43,7 +43,7 @@ table {
 
 img[src] {
  height: 25%;
- align: center;
+ align: center; /* or, display:block; margin:auto; */
 }
 
 .question {
